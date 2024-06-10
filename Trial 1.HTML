@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .left, .right {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .center {
+            text-align: center;
+            flex: 1;
+        }
+
+        .center img {
+            max-width: 130px; /* Reduced logo size */
+            height: auto;
+        }
+
+        .left img, .right img {
+            max-width: 50px;
+            height: auto;
+            margin: 0 10px;
+        }
+
+        .phone-info, .time-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .phone-info p, .time-info p {
+            margin: 0;
+            font-size: 16px; /* Increased font size */
+        }
+
+        .navigation-links {
+            margin-top: 5px; /* Reduced margin to bring navigation closer to the horizontal line */
+            text-align: center;
+        }
+
+        .navigation-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .navigation-links ul li {
+            margin: 5px 10px;
+            position: relative;
+        }
+
+        .navigation-links ul li a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(to right, #4CAF50, #2E8B57);
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .navigation-links ul li a:hover {
+            background: linear-gradient(to right, #2E8B57, #4CAF50);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            transform: scale(1.05);
+        }
+
+        .navigation-links ul li::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: #4CAF50;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+
+        .navigation-links ul li:hover::after {
+            width: 100%;
+            left: 0;
+            background: #2E8B57;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left, .right {
+                justify-content: center;
+                margin: 5px 0;
+            }
+
+            .navigation-links ul {
+                flex-direction: column;
+            }
+
+            .navigation-links ul li {
+                margin: 5px 0;
+            }
+
+            .navigation-links ul li ul {
+                position: static;
+            }
+        }
+        .phone-info a {
+    color: inherit; /* This will make the link inherit the color of its parent element */
+    text-decoration: none; /* Remove underline */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left">
+                <img src="phone.jpg" alt="Call us">
+                <div class="phone-info">
+                    <b>
+                        <a href="tel:+97143466111">Call Us: +971 43466111</a>
+                    </b>
+                </div>
+            </div>
+            <div class="center">
+                <a href="Park.html" target="main_frame"> <img src="Park.jpg" alt="Logo" class="main-logo"></a>
+            </div>
+            <div class="right">
+                <img src="clock.png" alt="Working Hours">
+                <div class="time-info">
+                    <b>
+                        <p>Saturday - Thursday: 10 A.M - 9 P.M</p>
+                        <p>Friday: Closed</p>
+                    </b>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="navigation-links">
+            <ul>
+                <li><a href="About.HTML" target="main_frame">About Us</a></li>
+                <li><a href="Meet.html" target="main_frame">Meet Our Team</a></li>
+                <li><a href="Services.html" target="main_frame">Services</a></li>
+                <li><a href="Gallery.html" target="main_frame">Gallery</a></li>
+                <li><a href="Blog.html" target="main_frame">Blog</a></li>
+                <li><a href="Contact.Html" target="main_frame">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+</body>
+</html>

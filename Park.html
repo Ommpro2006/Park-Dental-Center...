@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile With Style</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            overflow-x: hidden;
+        }
+        .container {
+            min-height: 100vh;
+            overflow: auto;
+            padding-bottom: 50px;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+            filter: brightness(1.2);
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            font-weight: 300;
+            background: linear-gradient(to right, #556b2f, #8b9a46);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideIn 2s forwards;
+            pointer-events: none;
+            user-select: none;
+        }
+        @keyframes slideIn {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 5%;
+            }
+        }
+        .slider {
+            position: relative;
+            margin: 20px auto;
+            width: 100%;
+            overflow: hidden;
+        }
+        .slide-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Added transition */
+        }
+        .box {
+            flex: 0 0 22.5%; /* Adjusted width */
+            height: 320px; /* Height remains the same */
+            margin: 5px;
+            background-color: #fff;
+            border-radius: 40px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            font-size: 1rem; /* Adjusted font size */
+            font-weight: 400; /* Increased font weight */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+        }
+        .box img {
+            width: 80px; /* Adjusted image size */
+            height: 80px; /* Adjusted image size */
+            margin-bottom: 20px; /* Added spacing below image */
+            transition: all 0.3s ease;
+        }
+        .box h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px; /* Added spacing below heading */
+            transition: all 0.3s ease;
+        }
+        .box p {
+            margin: 0;
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5; /* Improved readability */
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .box:hover img {
+            transform: scale(1.1); /* Added image zoom effect */
+        }
+        .box:hover h2, .box:hover p {
+            opacity: 1;
+        }
+        a {
+            text-decoration: none; /* Removed underline */
+            color: inherit; /* Removed hyperlink color */
+        }
+        a:hover {
+            color: #8b9a46; /* Changed hover color */
+        }
+        .more-details {
+            font-weight: bold;
+            color: #8b9a46; /* Changed color */
+            font-size: 1rem; /* Adjusted font size */
+            text-decoration: none; /* Removed underline */
+            transition: all 0.3s ease;
+        }
+        .more-details:hover {
+            transform: scale(1.1); /* Added hover effect */
+        }
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .dot {
+            width: 20px;
+            height: 20px;
+            margin: 0 10px;
+            background-color: grey;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dot.active {
+            background-color: black;
+        }
+        .footer {
+            background-color: #556B2F;
+            padding: 40px 0;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start; /* Adjusted alignment */
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .footer-logo img {
+            width: 200px; /* Increased size */
+            height: auto;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Added shadow */
+            transition: transform 0.3s ease; /* Added transition */
+        }
+
+        .footer-logo img:hover {
+            transform: scale(1.05); /* Added hover effect */
+        }
+
+        .footer-links a, .footer-contact a, .footer-follow a {
+            color: white; /* Reverted color to white */
+            text-decoration: none;
+            font-size: 18px; /* Increased font size */
+            margin-bottom: 10px; /* Added space between categories */
+            display: block; /* Display as block to occupy full width */
+        }
+
+        .footer-links a:hover, .footer-contact a:hover, .footer-follow a:hover {
+            color: #ddd;
+        }
+
+        .footer-contact p, .footer-contact a, .footer-follow p, .footer-follow a {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact img, .footer-follow img {
+            margin-right: 10px;
+            width: 60px; /* Increased size */
+            height: auto;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Added shadow */
+            transition: transform 0.3s ease; /* Added transition */
+        }
+
+        .footer-contact img:hover, .footer-follow img:hover {
+            transform: scale(1.05); /* Added hover effect */
+        }
+
+        /* Additional styling for footer sections */
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700; /* Added color for titles */
+        }
+
+        /* Styling for category photos */
+        .category-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .footer-logo img {
+    width: 200px;
+    height: auto;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin-left: 5px; /* Adjust the margin-left value to move the logo to the left */
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="smile1.png" alt="Image" class="image">
+            <div class="text">Smile With Style</div>
+        </div>
+
+        <div class="slider">
+            <div class="slide-track" id="slide-track">
+                <!-- Boxes remain unchanged -->
+                <div class="box">
+                    <img src="Veneers.png.webp" alt="Veneers">
+                    <h2>Veneers</h2>
+                    <p>Transform your smile with our high-quality veneers. Get that Hollywood Smile, celebrity-style with our dental professionals.</p>
+                    <a href="Veneers.html" class="more-details">More Details</a>
+                </div>
+                <div class="box">
+                    <img src="Teeth-Whitening.png.webp" alt="Teeth Whitening">
+                    <h2>Teeth Whitening</h2>
+                    <p>Get a dazzling, sparkly white smile with our Zoom teeth whitening services. Achieve the smile of your dreams today.</p>
+                    <a href="Teeth-Whitening.html" class="more-details">More Details</a>
+                </div>
+                <div class="box">
+                    <img src="General-Dentistry.png.webp" alt="General Dentistry">
+                    <h2>General Dentistry</h2>
+                    <p>From routine cleanings to complex procedures, our experienced team of dentists offers comprehensive general dentistry services to keep your smile healthy and beautiful.</p>
+                    <a href="General-Dentistry.html" class="more-details">More Details</a>
+                </div>
+                <div class="box">
+                    <img src="Invisalign.png.webp" alt="Invisalign">
+                    <h2>Invisalign</h2>
+                    <p>Straighten your teeth discreetly with Invisalign clear aligners. Get the perfect smile you've always wanted without the hassle of traditional braces.</p>
+                    <a href="Invisalign.html" class="more-details">More Details</a>
+                </div>
+                <div class="box">
+                    <img src="Dental-Braces.png.webp" alt="Teeth Braces">
+                    <h2>Teeth Braces</h2>
+                    <p>Choose from a variety of dental braces options to achieve a straighter smile. Our flexible payment plans make orthodontic treatment accessible to everyone.</p>
+                    <a href="Dental-Braces.html" class="more-details">More Details</a>
+                </div>
+                <div class="box">
+                    <img src="Dental-Implants.png.webp" alt="Dental Implants">
+                    <h2>Dental Implants</h2>
+                    <p>Restore your smile with high-quality dental implants. Replace missing teeth and regain confidence in your smile with our expert implant services.</p>
+                    <a href="Dental-Implants.html" class="more-details">More Details</a>
+                </div>
+                <div class="box">
+                    <img src="Pediatric-Dentistry.png.webp" alt="Pediatric Dentistry">
+                    <h2>Pediatric Dentistry</h2>
+                    <p>Ensure your child's oral health with our gentle and caring pediatric dental services. We provide comfortable care tailored to your little one's needs.</p>
+                    <a href="Pediatric-Dentistry.html" class="more-details">More Details</a>
+                </div>
+                <div class="box">
+                    <img src="Digital-Smile-Design.png.webp" alt="Digital Smile Design">
+                    <h2>Digital Smile Design</h2>
+                    <p>Visualize and design your perfect smile with our cutting-edge digital smile design technology. See your smile transformation before treatment begins.</p>
+                    <a href="Digital-Smile-Design.html" class="more-details">More Details</a>
+                </div>
+                <!-- Additional box -->
+            </div>
+        </div>
+        
+        <div class="dots">
+            <div class="dot" onclick="currentSlide(0)"></div>
+            <div class="dot" onclick="currentSlide(1)"></div>
+            <!-- Removed two dots -->
+        </div>
+    </div>
+    
+    <script>
+        let currentIndex = 0;
+        const totalBoxes = document.querySelectorAll('.box').length;
+        const dots = document.querySelectorAll('.dot');
+        const slideTrack = document.getElementById('slide-track');
+    
+        function showSlide(index) {
+            if (index >= 0 && index < totalBoxes / 4) {
+                slideTrack.style.transform = `translateX(-${index * (100 / (totalBoxes / 4))}%)`;
+                currentIndex = index;
+            } else {
+                slideTrack.style.transform = 'translateX(0)';
+                currentIndex = 0;
+            }
+    
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+    
+        function currentSlide(index) {
+            showSlide(index);
+        }
+    
+        function nextSlide() {
+            currentIndex += 1;
+            if (currentIndex >= totalBoxes / 4) {
+                currentIndex = 0;
+            }
+            showSlide(currentIndex);
+        }
+    
+        dots[currentIndex].classList.add('active');
+        setInterval(nextSlide, 8000);
+        
+    </script>
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section footer-links" style="margin-left: 60px;">
+            
+            <h4>Quick Links</h4>
+            <div>
+                <a href="About.html">About Us</a>
+            </div>
+            <div>
+                <a href="Meet.html">Meet Our Team</a>
+            </div>
+            <div>
+                <a href="Services.html">Services</a>
+            </div>
+            <div>
+                <a href="Gallery.html">Gallery</a>
+            </div>
+            <div>
+                <a href="Blog.html">Blog</a>
+            </div>
+        </div>
+        <div class="footer-section footer-contact">
+            <h4>Contact Us</h4>
+            <div style="display: flex; align-items: center;">
+                <a href="https://maps.google.com/?q=Park+Dental+Center,+22A+St+-+Al+Safa+-+Al+Safa+1+-+Dubai"><img src="location.jpg" alt="Location Icon" class="contact-photo" style="margin-bottom: 0; margin-right: 5px; margin-top: -5px;"></a> 
+                <a href="https://maps.google.com/?q=Park+Dental+Center,+22A+St+-+Al+Safa+-+Al+Safa+1+-+Dubai" target="_blank">
+                    Park Dental Center,<br> 22A St - Al Safa - Al Safa 1 - Dubai
+                </a>
+            </div>
+            <div>
+                <p>
+                    <a href="tel:+97143466111">
+                        <img src="phone.jpg" alt="Phone Icon" class="contact-photo"> 
+                        +971 43466111
+                    </a>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <img src="clock.png" alt="Clock Icon" class="contact-photo"> 
+                    Saturday - Thursday: 10 A.M - 9 P.M<br>Friday: Closed
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-section footer-follow"style="margin-left: 80px;">
+            <h4>Follow Us</h4>
+            <p>
+                <a href="https://www.facebook.com/p/Park-Dental-Center-100064929415442/" target="_blank">
+                    <img src="face.png" alt="Facebook Icon" class="follow-photo"> 
+                    
+                </a>
+            </p>
+            <p>
+                <a href="https://www.instagram.com/parkdental_dxb/" target="_blank">
+                    <img src="insta.jpg" alt="Instagram Icon" class="follow-photo"> 
+                    
+                </a>
+            </p>
+            
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Footer sections remain unchanged -->
+        </div>
+        <div class="footer-logo">
+            <img src="Park.png" alt="Park Logo" style="margin-right: 95px;">
+        </div>
+    </footer>
+
+</body>
+</html>
+

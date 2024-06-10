@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Park Dental Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpg" href="PARK.png"> <!-- Add this line to include the park.jpg logo -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #eef2f3; /* Light background color for better contrast */
+        }
+        .header, .main {
+            border: none;
+            width: 100%;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        }
+        .header {
+            height: 30%;
+            background-color: #f8f9fa;
+        }
+        .main {
+            height: 70%;
+            background-color: #ffffff;
+        }
+        .header:hover, .main:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+        @media (max-width: 768px) {
+            .header, .main {
+                height: 50%;
+            }
+        }
+        /* Adjust logo size and styling */
+        link[rel='icon'] {
+            width: 50px; /* Increase logo width */
+            height: 50px; /* Increase logo height */
+            margin-top: 10px; /* Add some top margin */
+            margin-left: 10px; /* Add some left margin */
+        }
+    </style>
+</head>
+<body>
+    <iframe class="header" src="Trial 1.HTML" name="header_frame"></iframe>
+    <iframe class="main" src="Park.html" name="main_frame"></iframe>
+</body>
+</html>

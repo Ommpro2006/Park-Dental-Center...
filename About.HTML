@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Remove the background watermark */
+        body::before {
+            content: '';
+            /* background-image: url('Park.jpg'); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* filter: grayscale(80%); */ /* Remove grayscale filter */
+            transition: opacity 0.5s ease; /* Add transition for smoothness */
+        }
+
+        /* Styling for the corner Tooth.jpg */
+        .corner-img {
+            position: absolute;
+            width: 100px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+            opacity: 0.8; /* Initial opacity */
+            transition: opacity 0.3s ease; /* Add transition for smoothness */
+        }
+
+        .top-left {
+            top: 20px; /* Adjust distance from top */
+            left: 20px; /* Adjust distance from left */
+        }
+
+        .top-right {
+            top: 20px; /* Adjust distance from top */
+            right: 20px; /* Adjust distance from right */
+        }
+
+        .bottom-left {
+            bottom: 20px; /* Adjust distance from bottom */
+            left: 20px; /* Adjust distance from left */
+        }
+
+        .bottom-right {
+            bottom: 20px; /* Adjust distance from bottom */
+            right: 20px; /* Adjust distance from right */
+        }
+
+        .content {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease; /* Add transition for smoothness */
+        }
+
+        .content:hover {
+            transform: translateY(-10px); /* Add subtle upward movement on hover */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555; /* Adjust text color for better readability */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tooth.jpg in the corners -->
+    <img src="Tooth.jpg" alt="Tooth" class="corner-img top-left">
+    <img src="Tooth.jpg" alt="Tooth" class="corner-img top-right">
+    <img src="Tooth.jpg" alt="Tooth" class="corner-img bottom-left">
+    <img src="Tooth.jpg" alt="Tooth" class="corner-img bottom-right">
+
+    <div class="content">
+        <h1>About Us</h1>
+        <p>Welcome to Park Dental Center, where we redefine dental care.</p>
+        <p>Located in the vibrant city of Dubai, our state-of-the-art facility offers comprehensive dental services to meet all your oral health needs.</p>
+        <p>At Park Dental Center, we prioritize patient comfort and satisfaction. Our team of experienced professionals is dedicated to providing personalized care in a warm and welcoming environment.</p>
+        <p>Experience the difference at Park Dental Center<br><br> - <span class="highlight">your smile is our priority.</span></p>
+    </div>
+    
+</body>
+</html>

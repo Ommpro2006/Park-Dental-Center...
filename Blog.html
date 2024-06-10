@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-y: scroll; /* Enable vertical scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling behavior */
+        }
+
+        .corner-photo {
+            position: absolute;
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            opacity: 0.5; /* Adjust opacity as needed */
+            transition: opacity 0.3s ease; /* Add transition for smoothness */
+        }
+
+        .corner-photo:hover {
+            opacity: 1; /* Increase opacity on hover */
+        }
+
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            color: #4CAF50; /* Single color */
+            opacity: 0; /* Hide initially */
+            animation: fadeIn 2s forwards, wiggle 2s infinite, rotate 5s infinite; /* Fade in animation, wiggle animation, and rotate animation */
+        }
+
+        /* Style for the 'Coming Soon' text */
+        .fancy-text {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            /* Animated gradient */
+            background: linear-gradient(45deg, #4CAF50, #4CAF50);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s infinite linear;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes wiggle {
+            0% {
+                transform: translateX(-2px) rotate(0deg);
+            }
+            50% {
+                transform: translateX(2px) rotate(10deg);
+            }
+            100% {
+                transform: translateX(-2px) rotate(0deg);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .footer {
+            background-color: #556B2F;
+            padding: 40px 0;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start; /* Adjusted alignment */
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .footer-logo img {
+            width: 200px; /* Increased size */
+            height: auto;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Added shadow */
+            transition: transform 0.3s ease; /* Added transition */
+        }
+
+        .footer-logo img:hover {
+            transform: scale(1.05); /* Added hover effect */
+        }
+
+        .footer-links a, .footer-contact a, .footer-follow a {
+            color: white; /* Reverted color to white */
+            text-decoration: none;
+            font-size: 18px; /* Increased font size */
+            margin-bottom: 10px; /* Added space between categories */
+            display: block; /* Display as block to occupy full width */
+        }
+
+        .footer-links a:hover, .footer-contact a:hover, .footer-follow a:hover {
+            color: #ddd;
+        }
+
+        .footer-contact p, .footer-contact a, .footer-follow p, .footer-follow a {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact img, .footer-follow img {
+            margin-right: 10px;
+            width: 60px; /* Increased size */
+            height: auto;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Added shadow */
+            transition: transform 0.3s ease; /* Added transition */
+        }
+
+        .footer-contact img:hover, .footer-follow img:hover {
+            transform: scale(1.05); /* Added hover effect */
+        }
+
+        /* Additional styling for footer sections */
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700; /* Added color for titles */
+        }
+
+        /* Styling for category photos */
+        .category-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .footer-logo img {
+    width: 200px;
+    height: auto;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin-left: 5px; /* Adjust the margin-left value to move the logo to the left */
+}
+    </style>
+</head>
+<body>
+    <!-- Corner photos -->
+    <img src="Tooth.jpg" alt="Tooth Watermark" class="corner-photo top-left">
+    <img src="Tooth.jpg" alt="Tooth Watermark" class="corner-photo top-right">
+    <img src="Tooth.jpg" alt="Tooth Watermark" class="corner-photo bottom-left">
+    <img src="Tooth.jpg" alt="Tooth Watermark" class="corner-photo bottom-right">
+    
+    <!-- 'Coming Soon' text -->
+    <div class="centered-text">
+        <div class="fancy-text">Coming Soon</div>
+    </div>
+
+    <!-- Placeholder for future content -->
+    <div style="height: 2000px;"></div>
+</body>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section footer-links" style="margin-left: 60px;">
+            
+            <h4>Quick Links</h4>
+            <div>
+                <a href="About.html">About Us</a>
+            </div>
+            <div>
+                <a href="Meet.html">Meet Our Team</a>
+            </div>
+            <div>
+                <a href="Services.html">Services</a>
+            </div>
+            <div>
+                <a href="Gallery.html">Gallery</a>
+            </div>
+            <div>
+                <a href="Blog.html">Blog</a>
+            </div>
+        </div>
+        <div class="footer-section footer-contact">
+            <h4>Contact Us</h4>
+            <div style="display: flex; align-items: center;">
+                <a href="https://maps.google.com/?q=Park+Dental+Center,+22A+St+-+Al+Safa+-+Al+Safa+1+-+Dubai"><img src="location.jpg" alt="Location Icon" class="contact-photo" style="margin-bottom: 0; margin-right: 5px; margin-top: -5px;"></a> 
+                <a href="https://maps.google.com/?q=Park+Dental+Center,+22A+St+-+Al+Safa+-+Al+Safa+1+-+Dubai" target="_blank">
+                    Park Dental Center,<br> 22A St - Al Safa - Al Safa 1 - Dubai
+                </a>
+            </div>
+            <div>
+                <p>
+                    <a href="tel:+97143466111">
+                        <img src="phone.jpg" alt="Phone Icon" class="contact-photo"> 
+                        +971 43466111
+                    </a>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <img src="clock.png" alt="Clock Icon" class="contact-photo"> 
+                    Saturday - Thursday: 10 A.M - 9 P.M<br>Friday: Closed
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-section footer-follow"style="margin-left: 80px;">
+            <h4>Follow Us</h4>
+            <p>
+                <a href="https://www.facebook.com/p/Park-Dental-Center-100064929415442/" target="_blank">
+                    <img src="face.png" alt="Facebook Icon" class="follow-photo"> 
+                    
+                </a>
+            </p>
+            <p>
+                <a href="https://www.instagram.com/parkdental_dxb/" target="_blank">
+                    <img src="insta.jpg" alt="Instagram Icon" class="follow-photo"> 
+                    
+                </a>
+            </p>
+            
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Footer sections remain unchanged -->
+        </div>
+        <div class="footer-logo">
+            <img src="Park.png" alt="Park Logo" style="margin-right: 95px;">
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veneers & Hollywood Smile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            position: relative;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            pointer-events: none;
+            user-select: none;
+            filter: brightness(1.2);
+        }
+        .text {
+            position: absolute;
+            top: 40%;
+            left: 10%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            font-weight: 300;
+            background: linear-gradient(to right, #556b2f, #8b9a46);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideIn 2s forwards;
+            pointer-events: none;
+            user-select: none;
+        }
+        .small-image-container {
+            position: absolute;
+            top: 35%;
+            left: 35%;
+        }
+        .small-image {
+            width: 50px;
+            height: auto;
+        }
+        .paragraph {
+            width: 70%;
+            text-align: left;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            padding-top: 20px;
+            margin-left: 5%;
+            position: relative;
+        }
+        .paragraph h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .paragraph p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-style: italic;
+            text-indent: 20px;
+            border-left: 5px solid #556b2f;
+            padding-left: 15px;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .side-image-container {
+    width: 30%; /* Keep the width */
+    margin-left: 78%; /* Adjust the left margin to move it further to the right */
+    margin-right: 30%; /* Add some margin to separate from the paragraph */
+    position: absolute; /* Position absolutely */
+    top: 70%; /* Keep the top position */
+    transform: translateY(-50%); /* Move the container up by half of its own height */
+}
+
+
+
+.side-image {
+    width: auto; /* Let the width adjust according to the height */
+    height: auto; /* Let the height adjust according to the width */
+    max-width: 300px; /* Increase the maximum width */
+    max-height: 3500px; /* Increase the maximum height */
+    border-radius: 10px; /* Add border radius for style */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth hover effect */
+}
+
+
+        /* Add hover animation */
+        .side-image:hover {
+            transform: scale(1.1); /* Increase size on hover */
+        }
+        @keyframes slideIn {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="Veneersss.png" alt="Veneers Header Image" class="image">
+            <div class="text"><b>Veneers & Hollywood Smile</b></div>
+            <div class="small-image-container">
+                <img src="Veneers.png.webp" alt="Small Veneers Image" class="small-image">
+            </div>
+        </div><br><br><br><br>
+        <div class="paragraph">
+            <h2>Transform embarrassing teeth into a Picture-perfect Hollywood smile with veneers in Dubai</h2>
+            <p>Ever wonder how actors and actresses have that picture-perfect smile? Want a complete smile makeover? If you have teeth that are discolored, crooked, or chipped and a smile that does not give you confidence, then talk to our dentists, and make an appointment to have an evaluation. Our specialist veneers dentists will assess whether you are a candidate for veneers and discuss with you your choice of veneers – i.e., ceramic, porcelain, or composite veneers. Not only do dental veneers give you white and fabulous teeth, but they give you straight teeth and a perfect smile. Almost that Hollywood smile!</p>
+            <p>A veneer procedure is carefully planned and executed to ensure the dental restoration appears natural in shape, color, and position. At Park Dental, we prioritize the comfort of our patients in addition to aesthetics. This requires a perfect blend of the artistic mind of our veneers specialists. Therefore, all veneers (ceramic/porcelain/composite) are performed by anesthetic dentists who are experts in this field. We use state-of-the-art technology and material. We place an extremely strong emphasis on conceptualizing, planning, and perfecting the design of your smile even before we start to work on your teeth.</p>
+            <p>Our goal is to give you the best aesthetics possible without crossing over the forbidden line where your smile starts to look artificial. This helps us achieve exceptional results. We have performed 1,000+ successful cases of smile makeovers and counting.</p>
+        </div>
+        <div class="side-image-container">
+            <img src="Veneers lady.webp" alt="Veneers Lady Image" class="side-image">
+        </div>
+    </div>
+    
+</body>
+</html>
